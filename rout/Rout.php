@@ -10,8 +10,25 @@ class Rout
 {
 
     private $requestUri; // this is the request URI
+    private $method;
     public $db;
+    public $base;
     public $isProcessed = false; // if the route has been processed
+
+    public function file_path($path)
+    {
+          $args = func_get_args();
+
+          $ds = '/'; 
+
+          $win_ds = '\\';
+
+          $n_path = count($args) > 1 ? implode($ds, $args) : $path;
+          if(strpos($n_path, $win_ds) !== false) $n_path = str_replace( $win_ds, $ds, $n_path );
+          $n_path = preg_replace( "#$ds+#", $ds, $n_path);
+          
+          return $n_path;
+    }
 
     /**
      * add a db connection if wanted
@@ -21,6 +38,8 @@ class Rout
 
     public function __construct()
     {
+
+        $this->base = $this->file_path(basename(__FILE__));
 
         if (func_num_args() > 0) {
 
