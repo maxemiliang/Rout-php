@@ -17,7 +17,7 @@ class Rout
 
   public $pReq;
   public $baseurl = ''; // has to be set manually if using on a subdir
-  private $db;
+  public $db;
 
 
   public function __construct($baseUrl = '', $db = null)
