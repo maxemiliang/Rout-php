@@ -1,7 +1,7 @@
 <?php 
 
-require "rout/Rout.php";
+require "rout/main.php";
 
-$app = new Rout("rout-php");
+$app = new Rout();
 
 print_r($_SERVER);
