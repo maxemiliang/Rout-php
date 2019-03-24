@@ -9,7 +9,12 @@
 </head>
 
 <body>
+    <form action="/post" method="POST">
+        <input type="text" name="Test">
+        <input type="submit" value="submit">
+    </form>
     <p><?php echo $v['msg']; ?></p>
+    <p><?php print_r($v); ?></p>
 </body>
 
 </html> 

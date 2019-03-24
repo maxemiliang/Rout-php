@@ -23,4 +23,8 @@ $app->get("/hello/world", function () use ($app) {
     $r = array('msg' => 'Hello world');
     $app->render("home.php", $r);
 });
+
+$app->post("/post", function($r) use ($app) {
+    $app->render("home.php", $r);
+});
  
